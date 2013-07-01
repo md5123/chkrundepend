@@ -1,0 +1,57 @@
+
+This project is a part of StartOS, it distributed under GPL.
+LICENSE: http://www.gnu.org/licenses/gpl-3.0.txt
+Copyright (C) 2012 - 2013  StarOS
+
+This project first obtains all binary executable files, then 
+queries their dependent shared libraries, after some heavy 
+computing, outputs the:
+
+    1)  Direct dependencies:  The first query result. The specified 
+            package works well just only these dependent packages 
+            have been installed and work well.
+
+    2)  All dependencies:  Including all dependencies of the specified 
+            package and these dependencies' dependencies. 
+
+    3)  Suggest dependencies:   The direct dependencies except that 
+            which have been become the dependency of sub-dependencies.
+
+According to the command line options:
+    Also, you can output a diagram about the packages' dependency. 
+
+About the usages, please refer to their help message(by specifying '-h' 
+option in the command line). 
+
+
+Note:  You should known that becaue of Bash Shell Script's limitation
+       that it does not support data structures, some critical 
+       operations in this project have not doing very well. So, the 
+       "Suggested dependencies" will not be absolutely right, just 
+       treat it as information for developer to refer to.
+       
+Usage:
+    Just executing them directly. 
+
+  * The 'chkrundepend.sh' will generates 4 directories:
+
+        direct_rtd_dir : The result record files. 
+        direct_log_dir : Log files. If encounter something wrong, may these 
+                         files will help you...
+        direct_dot_dir : The dot files, generating diagrams based on them.
+        rtd_svg_dir    : The svg diagrams about dependencies's relationship.
+
+
+  * The 'eybs.sh' needs ybs (The package system of StartOS). it checks Run-time 
+    dependencies of the configuration file of specified package, based of 
+    the results of 'chkrundepend.sh', it will shows you the some very useful 
+    message.
+
+
+Warning: If you received "Permission denied" error messages while executing, 
+      may be you shoud add 'x' permission to them, or add 'bash' before 
+      the command; AND obtain the permission of supervisor, 
+      
+
+
+By    chen-qx@live.cn    24/06/2013 

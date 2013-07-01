@@ -1,0 +1,20 @@
+
+Just executing these two scripts (chkrundepend.sh eybs.sh) directly,
+
+e.g.
+
+    ./chkrundepend.sh
+
+    ./eybs.sh 
+
+Or, you can copy them into the other directory for convenienice.
+
+Note: If you get "Permission denied" error messages when executing, 
+      may be you shoud add 'x' permission to them, or add 'bash' 
+      before the command.
+      
+
+About their usage, please refer to the README file, and their '-h' 
+option, respectively.
+
+
